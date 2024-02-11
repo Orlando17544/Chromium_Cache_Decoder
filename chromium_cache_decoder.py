@@ -45,15 +45,15 @@ for filename in os.listdir(directory):
                     if len(data_with_trailer) == 3:
                         data_stream1 = data_with_trailer[0]
 
-                    # Put the regex pattern you would like to search for
-                    if re.search(r'\.jpg$', key):
-                        url = key.split()[-1]
-                        url = urlparse(url)
-                        
-                        if not os.path.isdir('results/' + url.hostname):
-                            os.mkdir('results/' + url.hostname)
+                        # Put the regex pattern you would like to search for
+                        if re.search(r'\.jpg$', key):
+                            url = key.split()[-1]
+                            url = urlparse(url)
+                            
+                            if not os.path.isdir('results/' + url.hostname):
+                                os.mkdir('results/' + url.hostname)
 
-                        with open('results/' + url.hostname + '/' + str(count), "wb") as out:
-                            out.write(data_stream1)
+                            with open('results/' + url.hostname + '/' + str(count), "wb") as out:
+                                out.write(data_stream1)
 
-                        count += 1
+                            count += 1
